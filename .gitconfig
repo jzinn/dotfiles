@@ -1,0 +1,17 @@
+[user]
+	name = Julian Zinn
+	email = git@jz.oib.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	excludesfile = ~/.gitignore
+[alias]
+	co = checkout
+	ci = commit -a
+[gui]
+	recentrepo = ~/src/emacs-starter-kit
+[github]
+	user = jzinn
+	token = 0c2c875275e985590101e4f73ff85bb6

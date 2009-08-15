@@ -1,0 +1,45 @@
+# do not bell on tab-completion
+#set bell-style none
+
+set meta-flag on
+set input-meta on
+set convert-meta off
+set output-meta on
+
+set completion-ignore-case on
+set expand-tilde off
+
+$if mode=emacs
+
+# for linux console and RH/Debian xterm
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward 
+"\e[3~": delete-char
+"\e[2~": quoted-insert
+
+"\e[D": backward-char
+"\e[C": forward-char
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+"\eOD": backward-word
+"\eOC": forward-word
+"\e[5D": backward-word
+"\e[5C": forward-word
+#"\e\e[D": backward-word
+#"\e\e[C": forward-word
+
+# for rxvt
+"\e[8~": end-of-line
+
+# for non RH/Debian xterm, can't hurt for RH/DEbian xterm
+"\eOH": beginning-of-line
+"\eOF": end-of-line
+
+# for freebsd console
+"\e[H": beginning-of-line
+"\e[F": end-of-line
+
+$endif
