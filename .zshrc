@@ -30,7 +30,7 @@ function tree() {
 # zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # zstyle ':completion:*:processes' command 'ps -U $(whoami) | sed "/ps/d"'
-# zstyle ':completion:*:processes' insert-ids menu yes select 
+# zstyle ':completion:*:processes' insert-ids menu yes select
 # zstyle ':completion:*:kill:*' insert-ids single
 # zstyle ':completion:*:*:kill:*' menu yes select
 # zstyle ':completion:*:kill:*' force-list always
@@ -57,7 +57,7 @@ autoload -Uz compinit && compinit
 if [[ -e ~/.ssh/known_hosts ]]; then
   # Use .ssh/known_hosts for hostnames.
   hosts=(${${${(f)"$(<$HOME/.ssh/known_hosts)"}%%\ *}%%,*})
-  zstyle ':completion:*:hosts' hosts $hosts 
+  zstyle ':completion:*:hosts' hosts $hosts
 fi
 setopt list_packed
 
@@ -93,7 +93,7 @@ typeset -g -A key
 # source ${ZDOTDIR:-$HOME}/.zkbd/$TERM-$VENDOR-$OSTYPE
 
 bindkeys() {
-#  [[ -n "${key[Backspace]}" ]] && bindkey "${key[Backspace]}" backward-delete-char
+  [[ -n "${key[Backspace]}" ]] && bindkey "${key[Backspace]}" backward-delete-char
   [[ -n "${key[Insert]}"    ]] && bindkey "${key[Insert]}"    overwrite-mode
   [[ -n "${key[Delete]}"    ]] && bindkey "${key[Delete]}"    delete-char
   [[ -n "${key[Home]}"      ]] && bindkey "${key[Home]}"      beginning-of-line
